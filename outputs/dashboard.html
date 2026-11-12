@@ -1,0 +1,2142 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B2B CRM analysis</title><style>body{margin:0;background:#eef2f7;color:#16243b;font:16px system-ui}main{max-width:1180px;margin:auto;padding:36px 24px}header{background:#16243b;color:white;padding:32px;border-radius:16px}.cards{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}.card,section{background:white;padding:22px;border-radius:12px;margin-bottom:22px;overflow:auto}.card{flex:1;min-width:170px}strong{font-size:30px}table{border-collapse:collapse;white-space:nowrap;width:100%;font-size:13px}td,th{padding:10px;text-align:left;border-bottom:1px solid #e1e7ef}img{max-width:100%;height:auto}p{line-height:1.65}@media print{body{background:white}header{color:black;background:white}}</style><main><header><p>PORTFOLIO PROJECT · SIMULATED DATA</p><h1>B2B sales funnel & CRM analysis</h1><p>January–June 2026 lead cohorts · Snapshot 30 September 2026 · 90-day conversion window</p></header><div class="cards"><div class="card"><strong>24,000</strong><p>Unique leads</p></div><div class="card"><strong>2,420</strong><p>Won within 90 days</p></div><div class="card"><strong>10.08%</strong><p>Overall conversion</p></div><div class="card"><strong>24.54×</strong><p>Highest / lowest source rate</p></div></div><section><h2>Decision brief</h2><p>Partner referrals convert at 31.9% (1,276/4,000); cold outbound at 1.3% (52/4,000). The ratio is 24.54×, and the absolute gap is 30.6 percentage points. These values were deliberately engineered in a simulated dataset.</p><p>Highest rep conversion is 11.67%; lowest is 8.33%. The relative gap is 40%, or 3.33 percentage points. Rep comparisons need source, territory, tenure and account-quality controls before performance action.</p><p>Recommend a limited reallocation experiment, with qualified lead volume, contribution margin, capacity and marginal acquisition cost guardrails. No budget was actually moved and no realized uplift is claimed.</p></section><section><img src="source_conversion.png" alt="Source conversion rates and Wilson intervals"><img src="rep_conversion.png" alt="Raw and source adjusted rep conversion"><img src="sales_funnel.png" alt="Cumulative funnel stage counts"></section><section><h2>Source Performance</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+      <th>revenue_inr</th>
+      <th>spend_inr</th>
+      <th>cost_per_lead_inr</th>
+      <th>acquisition_cost_proxy_inr</th>
+      <th>revenue_to_spend</th>
+      <th>ci_low_pct</th>
+      <th>ci_high_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Partner referrals</td>
+      <td>4000</td>
+      <td>1276</td>
+      <td>31.9</td>
+      <td>114705000.0</td>
+      <td>400000.0</td>
+      <td>100.0</td>
+      <td>313.480</td>
+      <td>286.762</td>
+      <td>30.474</td>
+      <td>33.361</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>4000</td>
+      <td>360</td>
+      <td>9.0</td>
+      <td>32315000.0</td>
+      <td>500000.0</td>
+      <td>125.0</td>
+      <td>1388.889</td>
+      <td>64.630</td>
+      <td>8.152</td>
+      <td>9.927</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>4000</td>
+      <td>280</td>
+      <td>7.0</td>
+      <td>26102000.0</td>
+      <td>900000.0</td>
+      <td>225.0</td>
+      <td>3214.286</td>
+      <td>29.002</td>
+      <td>6.250</td>
+      <td>7.833</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>4000</td>
+      <td>252</td>
+      <td>6.3</td>
+      <td>23120000.0</td>
+      <td>600000.0</td>
+      <td>150.0</td>
+      <td>2380.952</td>
+      <td>38.533</td>
+      <td>5.588</td>
+      <td>7.096</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>4000</td>
+      <td>200</td>
+      <td>5.0</td>
+      <td>18154000.0</td>
+      <td>800000.0</td>
+      <td>200.0</td>
+      <td>4000.000</td>
+      <td>22.692</td>
+      <td>4.367</td>
+      <td>5.720</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>4000</td>
+      <td>52</td>
+      <td>1.3</td>
+      <td>5022000.0</td>
+      <td>600000.0</td>
+      <td>150.0</td>
+      <td>11538.462</td>
+      <td>8.370</td>
+      <td>0.993</td>
+      <td>1.701</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Rep Performance</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>rep_id</th>
+      <th>rep_name</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R08</td>
+      <td>Rep 8</td>
+      <td>3000</td>
+      <td>350</td>
+      <td>11.667</td>
+    </tr>
+    <tr>
+      <td>R07</td>
+      <td>Rep 7</td>
+      <td>3000</td>
+      <td>330</td>
+      <td>11.000</td>
+    </tr>
+    <tr>
+      <td>R06</td>
+      <td>Rep 6</td>
+      <td>3000</td>
+      <td>320</td>
+      <td>10.667</td>
+    </tr>
+    <tr>
+      <td>R05</td>
+      <td>Rep 5</td>
+      <td>3000</td>
+      <td>310</td>
+      <td>10.333</td>
+    </tr>
+    <tr>
+      <td>R04</td>
+      <td>Rep 4</td>
+      <td>3000</td>
+      <td>300</td>
+      <td>10.000</td>
+    </tr>
+    <tr>
+      <td>R03</td>
+      <td>Rep 3</td>
+      <td>3000</td>
+      <td>290</td>
+      <td>9.667</td>
+    </tr>
+    <tr>
+      <td>R02</td>
+      <td>Rep 2</td>
+      <td>3000</td>
+      <td>270</td>
+      <td>9.000</td>
+    </tr>
+    <tr>
+      <td>R01</td>
+      <td>Rep 1</td>
+      <td>3000</td>
+      <td>250</td>
+      <td>8.333</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Source Rep Region</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>rep_id</th>
+      <th>region</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>131</td>
+      <td>3</td>
+      <td>2.290</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>119</td>
+      <td>1</td>
+      <td>0.840</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>111</td>
+      <td>2</td>
+      <td>1.802</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>116</td>
+      <td>1</td>
+      <td>0.862</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>122</td>
+      <td>3</td>
+      <td>2.459</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>129</td>
+      <td>1</td>
+      <td>0.775</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>139</td>
+      <td>2</td>
+      <td>1.439</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>137</td>
+      <td>4</td>
+      <td>2.920</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>112</td>
+      <td>1</td>
+      <td>0.893</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>139</td>
+      <td>1</td>
+      <td>0.719</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>126</td>
+      <td>1</td>
+      <td>0.794</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>128</td>
+      <td>1</td>
+      <td>0.781</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>124</td>
+      <td>0</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>116</td>
+      <td>2</td>
+      <td>1.724</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>132</td>
+      <td>1</td>
+      <td>0.758</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>136</td>
+      <td>5</td>
+      <td>3.676</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>143</td>
+      <td>3</td>
+      <td>2.098</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>102</td>
+      <td>2</td>
+      <td>1.961</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>117</td>
+      <td>1</td>
+      <td>0.855</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>144</td>
+      <td>1</td>
+      <td>0.694</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>120</td>
+      <td>3</td>
+      <td>2.500</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>106</td>
+      <td>2</td>
+      <td>1.887</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>120</td>
+      <td>0</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>132</td>
+      <td>2</td>
+      <td>1.515</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>118</td>
+      <td>1</td>
+      <td>0.847</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>130</td>
+      <td>1</td>
+      <td>0.769</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>129</td>
+      <td>0</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>132</td>
+      <td>1</td>
+      <td>0.758</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>121</td>
+      <td>2</td>
+      <td>1.653</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>134</td>
+      <td>2</td>
+      <td>1.493</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>106</td>
+      <td>1</td>
+      <td>0.943</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>129</td>
+      <td>1</td>
+      <td>0.775</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>133</td>
+      <td>11</td>
+      <td>8.271</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>126</td>
+      <td>7</td>
+      <td>5.556</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>126</td>
+      <td>8</td>
+      <td>6.349</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>135</td>
+      <td>11</td>
+      <td>8.148</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>127</td>
+      <td>10</td>
+      <td>7.874</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>122</td>
+      <td>10</td>
+      <td>8.197</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>97</td>
+      <td>2</td>
+      <td>2.062</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>131</td>
+      <td>16</td>
+      <td>12.214</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>124</td>
+      <td>4</td>
+      <td>3.226</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>130</td>
+      <td>7</td>
+      <td>5.385</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>122</td>
+      <td>13</td>
+      <td>10.656</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>126</td>
+      <td>10</td>
+      <td>7.937</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>114</td>
+      <td>6</td>
+      <td>5.263</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>140</td>
+      <td>10</td>
+      <td>7.143</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>126</td>
+      <td>15</td>
+      <td>11.905</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>116</td>
+      <td>10</td>
+      <td>8.621</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>128</td>
+      <td>17</td>
+      <td>13.281</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>133</td>
+      <td>17</td>
+      <td>12.782</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>129</td>
+      <td>15</td>
+      <td>11.628</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>131</td>
+      <td>12</td>
+      <td>9.160</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>108</td>
+      <td>9</td>
+      <td>8.333</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>115</td>
+      <td>13</td>
+      <td>11.304</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>135</td>
+      <td>13</td>
+      <td>9.630</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>135</td>
+      <td>13</td>
+      <td>9.630</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>123</td>
+      <td>14</td>
+      <td>11.382</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>129</td>
+      <td>12</td>
+      <td>9.302</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>129</td>
+      <td>11</td>
+      <td>8.527</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>116</td>
+      <td>9</td>
+      <td>7.759</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>116</td>
+      <td>10</td>
+      <td>8.621</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>122</td>
+      <td>11</td>
+      <td>9.016</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>126</td>
+      <td>16</td>
+      <td>12.698</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>130</td>
+      <td>18</td>
+      <td>13.846</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>125</td>
+      <td>5</td>
+      <td>4.000</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>112</td>
+      <td>6</td>
+      <td>5.357</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>124</td>
+      <td>6</td>
+      <td>4.839</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>123</td>
+      <td>7</td>
+      <td>5.691</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>110</td>
+      <td>3</td>
+      <td>2.727</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>140</td>
+      <td>9</td>
+      <td>6.429</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>111</td>
+      <td>1</td>
+      <td>0.901</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>143</td>
+      <td>10</td>
+      <td>6.993</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>117</td>
+      <td>7</td>
+      <td>5.983</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>119</td>
+      <td>6</td>
+      <td>5.042</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>116</td>
+      <td>8</td>
+      <td>6.897</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>139</td>
+      <td>6</td>
+      <td>4.317</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>125</td>
+      <td>8</td>
+      <td>6.400</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>103</td>
+      <td>9</td>
+      <td>8.738</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>146</td>
+      <td>10</td>
+      <td>6.849</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>142</td>
+      <td>6</td>
+      <td>4.225</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>157</td>
+      <td>8</td>
+      <td>5.096</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>121</td>
+      <td>9</td>
+      <td>7.438</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>133</td>
+      <td>9</td>
+      <td>6.767</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>108</td>
+      <td>9</td>
+      <td>8.333</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>126</td>
+      <td>8</td>
+      <td>6.349</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>120</td>
+      <td>12</td>
+      <td>10.000</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>126</td>
+      <td>10</td>
+      <td>7.937</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>127</td>
+      <td>14</td>
+      <td>11.024</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>117</td>
+      <td>13</td>
+      <td>11.111</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>139</td>
+      <td>13</td>
+      <td>9.353</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>116</td>
+      <td>8</td>
+      <td>6.897</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>127</td>
+      <td>11</td>
+      <td>8.661</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>114</td>
+      <td>13</td>
+      <td>11.404</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>124</td>
+      <td>10</td>
+      <td>8.065</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>125</td>
+      <td>13</td>
+      <td>10.400</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>125</td>
+      <td>13</td>
+      <td>10.400</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>123</td>
+      <td>4</td>
+      <td>3.252</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>127</td>
+      <td>10</td>
+      <td>7.874</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>131</td>
+      <td>4</td>
+      <td>3.053</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>130</td>
+      <td>10</td>
+      <td>7.692</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>146</td>
+      <td>9</td>
+      <td>6.164</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>127</td>
+      <td>3</td>
+      <td>2.362</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>121</td>
+      <td>3</td>
+      <td>2.479</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>136</td>
+      <td>10</td>
+      <td>7.353</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>121</td>
+      <td>2</td>
+      <td>1.653</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>98</td>
+      <td>4</td>
+      <td>4.082</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>112</td>
+      <td>11</td>
+      <td>9.821</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>124</td>
+      <td>2</td>
+      <td>1.613</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>122</td>
+      <td>3</td>
+      <td>2.459</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>136</td>
+      <td>5</td>
+      <td>3.676</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>114</td>
+      <td>2</td>
+      <td>1.754</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>127</td>
+      <td>9</td>
+      <td>7.087</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>107</td>
+      <td>10</td>
+      <td>9.346</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>117</td>
+      <td>6</td>
+      <td>5.128</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>111</td>
+      <td>4</td>
+      <td>3.604</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>142</td>
+      <td>4</td>
+      <td>2.817</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>140</td>
+      <td>6</td>
+      <td>4.286</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>127</td>
+      <td>6</td>
+      <td>4.724</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>122</td>
+      <td>7</td>
+      <td>5.738</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>121</td>
+      <td>7</td>
+      <td>5.785</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>139</td>
+      <td>10</td>
+      <td>7.194</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>110</td>
+      <td>7</td>
+      <td>6.364</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>126</td>
+      <td>7</td>
+      <td>5.556</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>139</td>
+      <td>8</td>
+      <td>5.755</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>134</td>
+      <td>6</td>
+      <td>4.478</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>125</td>
+      <td>11</td>
+      <td>8.800</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>109</td>
+      <td>6</td>
+      <td>5.505</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>136</td>
+      <td>4</td>
+      <td>2.941</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>112</td>
+      <td>26</td>
+      <td>23.214</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>116</td>
+      <td>25</td>
+      <td>21.552</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>135</td>
+      <td>36</td>
+      <td>26.667</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>118</td>
+      <td>39</td>
+      <td>33.051</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>117</td>
+      <td>34</td>
+      <td>29.060</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>143</td>
+      <td>41</td>
+      <td>28.671</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>115</td>
+      <td>35</td>
+      <td>30.435</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>119</td>
+      <td>39</td>
+      <td>32.773</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>136</td>
+      <td>47</td>
+      <td>34.559</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>142</td>
+      <td>48</td>
+      <td>33.803</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>127</td>
+      <td>40</td>
+      <td>31.496</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>105</td>
+      <td>30</td>
+      <td>28.571</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>127</td>
+      <td>36</td>
+      <td>28.346</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>128</td>
+      <td>46</td>
+      <td>35.938</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>116</td>
+      <td>42</td>
+      <td>36.207</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>122</td>
+      <td>49</td>
+      <td>40.164</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>128</td>
+      <td>42</td>
+      <td>32.812</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>122</td>
+      <td>46</td>
+      <td>37.705</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>118</td>
+      <td>28</td>
+      <td>23.729</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>138</td>
+      <td>49</td>
+      <td>35.507</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>142</td>
+      <td>42</td>
+      <td>29.577</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>128</td>
+      <td>43</td>
+      <td>33.594</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>139</td>
+      <td>43</td>
+      <td>30.935</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>115</td>
+      <td>30</td>
+      <td>26.087</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>110</td>
+      <td>30</td>
+      <td>27.273</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>130</td>
+      <td>54</td>
+      <td>41.538</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>121</td>
+      <td>40</td>
+      <td>33.058</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>102</td>
+      <td>43</td>
+      <td>42.157</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>150</td>
+      <td>44</td>
+      <td>29.333</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>118</td>
+      <td>31</td>
+      <td>26.271</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>123</td>
+      <td>40</td>
+      <td>32.520</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>138</td>
+      <td>58</td>
+      <td>42.029</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R01</td>
+      <td>East</td>
+      <td>122</td>
+      <td>5</td>
+      <td>4.098</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R01</td>
+      <td>North</td>
+      <td>151</td>
+      <td>13</td>
+      <td>8.609</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R01</td>
+      <td>South</td>
+      <td>121</td>
+      <td>3</td>
+      <td>2.479</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R01</td>
+      <td>West</td>
+      <td>133</td>
+      <td>7</td>
+      <td>5.263</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R02</td>
+      <td>East</td>
+      <td>115</td>
+      <td>4</td>
+      <td>3.478</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R02</td>
+      <td>North</td>
+      <td>124</td>
+      <td>7</td>
+      <td>5.645</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R02</td>
+      <td>South</td>
+      <td>112</td>
+      <td>9</td>
+      <td>8.036</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R02</td>
+      <td>West</td>
+      <td>117</td>
+      <td>5</td>
+      <td>4.274</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R03</td>
+      <td>East</td>
+      <td>141</td>
+      <td>6</td>
+      <td>4.255</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R03</td>
+      <td>North</td>
+      <td>134</td>
+      <td>8</td>
+      <td>5.970</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R03</td>
+      <td>South</td>
+      <td>115</td>
+      <td>14</td>
+      <td>12.174</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R03</td>
+      <td>West</td>
+      <td>147</td>
+      <td>13</td>
+      <td>8.844</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R04</td>
+      <td>East</td>
+      <td>114</td>
+      <td>7</td>
+      <td>6.140</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R04</td>
+      <td>North</td>
+      <td>134</td>
+      <td>5</td>
+      <td>3.731</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R04</td>
+      <td>South</td>
+      <td>118</td>
+      <td>10</td>
+      <td>8.475</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R04</td>
+      <td>West</td>
+      <td>122</td>
+      <td>4</td>
+      <td>3.279</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R05</td>
+      <td>East</td>
+      <td>119</td>
+      <td>3</td>
+      <td>2.521</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R05</td>
+      <td>North</td>
+      <td>104</td>
+      <td>4</td>
+      <td>3.846</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R05</td>
+      <td>South</td>
+      <td>117</td>
+      <td>7</td>
+      <td>5.983</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R05</td>
+      <td>West</td>
+      <td>131</td>
+      <td>4</td>
+      <td>3.053</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R06</td>
+      <td>East</td>
+      <td>141</td>
+      <td>15</td>
+      <td>10.638</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R06</td>
+      <td>North</td>
+      <td>122</td>
+      <td>5</td>
+      <td>4.098</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R06</td>
+      <td>South</td>
+      <td>95</td>
+      <td>6</td>
+      <td>6.316</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R06</td>
+      <td>West</td>
+      <td>138</td>
+      <td>11</td>
+      <td>7.971</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R07</td>
+      <td>East</td>
+      <td>139</td>
+      <td>11</td>
+      <td>7.914</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R07</td>
+      <td>North</td>
+      <td>129</td>
+      <td>10</td>
+      <td>7.752</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R07</td>
+      <td>South</td>
+      <td>123</td>
+      <td>6</td>
+      <td>4.878</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R07</td>
+      <td>West</td>
+      <td>127</td>
+      <td>10</td>
+      <td>7.874</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R08</td>
+      <td>East</td>
+      <td>125</td>
+      <td>13</td>
+      <td>10.400</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R08</td>
+      <td>North</td>
+      <td>117</td>
+      <td>6</td>
+      <td>5.128</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R08</td>
+      <td>South</td>
+      <td>140</td>
+      <td>11</td>
+      <td>7.857</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>R08</td>
+      <td>West</td>
+      <td>113</td>
+      <td>10</td>
+      <td>8.850</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Region Performance</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>region</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>West</td>
+      <td>6148</td>
+      <td>646</td>
+      <td>10.507</td>
+    </tr>
+    <tr>
+      <td>North</td>
+      <td>5979</td>
+      <td>617</td>
+      <td>10.319</td>
+    </tr>
+    <tr>
+      <td>South</td>
+      <td>5848</td>
+      <td>580</td>
+      <td>9.918</td>
+    </tr>
+    <tr>
+      <td>East</td>
+      <td>6025</td>
+      <td>577</td>
+      <td>9.577</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Funnel By Source</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>leads</th>
+      <th>contacted</th>
+      <th>qualified</th>
+      <th>proposed</th>
+      <th>won</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cold outbound</td>
+      <td>4000</td>
+      <td>3119</td>
+      <td>1671</td>
+      <td>1129</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>4000</td>
+      <td>3225</td>
+      <td>1843</td>
+      <td>1333</td>
+      <td>360</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>4000</td>
+      <td>3152</td>
+      <td>1800</td>
+      <td>1287</td>
+      <td>280</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>4000</td>
+      <td>3152</td>
+      <td>1729</td>
+      <td>1226</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>4000</td>
+      <td>3908</td>
+      <td>3367</td>
+      <td>2633</td>
+      <td>1276</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>4000</td>
+      <td>3152</td>
+      <td>1778</td>
+      <td>1224</td>
+      <td>252</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Monthly Cohort</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cohort_month</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-01</td>
+      <td>4217</td>
+      <td>429</td>
+      <td>10.173</td>
+    </tr>
+    <tr>
+      <td>2026-02</td>
+      <td>3599</td>
+      <td>360</td>
+      <td>10.003</td>
+    </tr>
+    <tr>
+      <td>2026-03</td>
+      <td>4125</td>
+      <td>431</td>
+      <td>10.448</td>
+    </tr>
+    <tr>
+      <td>2026-04</td>
+      <td>3903</td>
+      <td>392</td>
+      <td>10.044</td>
+    </tr>
+    <tr>
+      <td>2026-05</td>
+      <td>4101</td>
+      <td>424</td>
+      <td>10.339</td>
+    </tr>
+    <tr>
+      <td>2026-06</td>
+      <td>4055</td>
+      <td>384</td>
+      <td>9.470</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Lost Reasons</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>lost_reason</th>
+      <th>lost_leads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cold outbound</td>
+      <td>Competitor</td>
+      <td>749</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>Timing</td>
+      <td>701</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>Price</td>
+      <td>697</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>No response</td>
+      <td>669</td>
+    </tr>
+    <tr>
+      <td>Cold outbound</td>
+      <td>Poor fit</td>
+      <td>655</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>Price</td>
+      <td>653</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>No response</td>
+      <td>650</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>Timing</td>
+      <td>649</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>Poor fit</td>
+      <td>646</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>Competitor</td>
+      <td>597</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>Poor fit</td>
+      <td>701</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>No response</td>
+      <td>658</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>Price</td>
+      <td>655</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>Timing</td>
+      <td>653</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>Competitor</td>
+      <td>597</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>Price</td>
+      <td>700</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>No response</td>
+      <td>677</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>Competitor</td>
+      <td>673</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>Timing</td>
+      <td>650</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>Poor fit</td>
+      <td>630</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>Competitor</td>
+      <td>516</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>Timing</td>
+      <td>502</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>No response</td>
+      <td>463</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>Poor fit</td>
+      <td>455</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>Price</td>
+      <td>449</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>Competitor</td>
+      <td>687</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>Timing</td>
+      <td>671</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>Poor fit</td>
+      <td>659</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>No response</td>
+      <td>658</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>Price</td>
+      <td>642</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Response Time</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response_bucket</th>
+      <th>leads</th>
+      <th>wins</th>
+      <th>conversion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01: &lt;=4h</td>
+      <td>7469</td>
+      <td>941</td>
+      <td>12.599</td>
+    </tr>
+    <tr>
+      <td>02: 5-24h</td>
+      <td>7370</td>
+      <td>878</td>
+      <td>11.913</td>
+    </tr>
+    <tr>
+      <td>03: &gt;24h</td>
+      <td>4869</td>
+      <td>601</td>
+      <td>12.343</td>
+    </tr>
+    <tr>
+      <td>04: Uncontacted</td>
+      <td>4292</td>
+      <td>0</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Cycle Time</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>wins</th>
+      <th>mean_days_to_win</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cold outbound</td>
+      <td>52</td>
+      <td>32.769</td>
+    </tr>
+    <tr>
+      <td>Organic search</td>
+      <td>360</td>
+      <td>33.742</td>
+    </tr>
+    <tr>
+      <td>Paid search</td>
+      <td>280</td>
+      <td>35.354</td>
+    </tr>
+    <tr>
+      <td>Paid social</td>
+      <td>200</td>
+      <td>34.930</td>
+    </tr>
+    <tr>
+      <td>Partner referrals</td>
+      <td>1276</td>
+      <td>34.792</td>
+    </tr>
+    <tr>
+      <td>Webinars</td>
+      <td>252</td>
+      <td>34.956</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Source Adjusted Rep</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>rep_id</th>
+      <th>source_adjusted_conversion_pct</th>
+      <th>smallest_source_cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R08</td>
+      <td>11.423</td>
+      <td>488</td>
+    </tr>
+    <tr>
+      <td>R07</td>
+      <td>11.383</td>
+      <td>463</td>
+    </tr>
+    <tr>
+      <td>R06</td>
+      <td>10.455</td>
+      <td>478</td>
+    </tr>
+    <tr>
+      <td>R05</td>
+      <td>10.216</td>
+      <td>471</td>
+    </tr>
+    <tr>
+      <td>R04</td>
+      <td>10.077</td>
+      <td>488</td>
+    </tr>
+    <tr>
+      <td>R03</td>
+      <td>9.538</td>
+      <td>455</td>
+    </tr>
+    <tr>
+      <td>R02</td>
+      <td>9.108</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <td>R01</td>
+      <td>8.422</td>
+      <td>477</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Limits</h2><p>One lead per account; no repeat deals. Outcomes, response times, spend and deal sizes are simulated. Intervals illustrate sampling methods, not uncertainty about real business performance. Response-time associations are affected by construction and selection. Source adjustment does not control every confounder. Spend excludes salaries and is an acquisition-cost proxy, not fully loaded CAC. Revenue is booked won value, not collected cash or profit.</p></section></main></html>

@@ -1,0 +1,31 @@
+source,lost_reason,lost_leads
+Cold outbound,Competitor,749
+Cold outbound,Timing,701
+Cold outbound,Price,697
+Cold outbound,No response,669
+Cold outbound,Poor fit,655
+Organic search,Price,653
+Organic search,No response,650
+Organic search,Timing,649
+Organic search,Poor fit,646
+Organic search,Competitor,597
+Paid search,Poor fit,701
+Paid search,No response,658
+Paid search,Price,655
+Paid search,Timing,653
+Paid search,Competitor,597
+Paid social,Price,700
+Paid social,No response,677
+Paid social,Competitor,673
+Paid social,Timing,650
+Paid social,Poor fit,630
+Partner referrals,Competitor,516
+Partner referrals,Timing,502
+Partner referrals,No response,463
+Partner referrals,Poor fit,455
+Partner referrals,Price,449
+Webinars,Competitor,687
+Webinars,Timing,671
+Webinars,Poor fit,659
+Webinars,No response,658
+Webinars,Price,642
